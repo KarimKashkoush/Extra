@@ -217,7 +217,7 @@ a {
 .navbar .container>section .number h5 {
     position: absolute;
     top: -8px;
-    left: -8px;
+    right: -8px;
     font-size: 10px;
     background-color: var(--main-color);
     color: var(--link-sub-color);
@@ -230,7 +230,7 @@ a {
     padding: 2px;
 }
 
-.navbar .container>section:hover {
+.navbar .container>section:not(.logo):hover {
     background-color: var(--bg-sub-color);
 }
 
@@ -274,6 +274,7 @@ a {
     .navbar .container {
         gap: var(--p-5);
     }
+
     .navbar .container .btn-navbar,
     .navbar .container .jood,
     .navbar .container .favorite,
@@ -281,6 +282,7 @@ a {
     .navbar .container .shopping-cart p {
         display: none;
     }
+
     .navbar {
         border-bottom: var(--border);
     }
@@ -289,28 +291,36 @@ a {
         border-left: var(--border);
         padding: 15px 0 15px 15px;
     }
+
     .navbar .container .logo svg {
         width: 40px;
     }
+
     .navbar .container .shopping-cart {
         border-right: var(--border);
         padding: 15px 15px 15px 0;
     }
+
     .navbar .container form input {
         border: none;
-        font-size: 10px;
+        font-size: 12px;
     }
-    .navbar .container > section {
+
+    .navbar .container>section {
         width: fit-content;
         height: 50px;
     }
 
-    .navbar .container > section svg,
+    .navbar .container>section svg,
     .navbar .container form svg {
         font-size: 16px;
     }
 
+    .navbar .container>section:not(.logo):hover {
+        background-color: transparent;
+    }
 }
+
 /* End NavBar */
 /* Start Header */
 .header {
@@ -386,18 +396,37 @@ a {
         display: none;
     }
 }
+
 /* End Header */
 /* Start Delivery */
 .delivery {
     background-color: var(--bg-sub-color);
     padding: 10px;
     text-align: center;
-    border-top:var(--border);
+    border-top: var(--border);
     border-bottom: var(--border);
 }
+.delivery .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+.delivery .container .content {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: var(--link-color);
+    transition: var(--transition-3);
+}
+.delivery .container .content:hover {
+    color: var(--link-sub-color);
+}
 @media (max-width: 999px) {
-    .delivery{
+    .delivery {
         display: none;
     }
 }
+
 /* End Delivery */
